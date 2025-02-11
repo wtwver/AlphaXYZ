@@ -22,7 +22,7 @@ encoded_state = tictactoe.get_encoded_state(state)
 
 tensor_state = torch.tensor(encoded_state).unsqueeze(0)
 
-model = ResNet(tictactoe, 4, 64)
+model = ResNet(tictactoe, 4, 64, device="cpu")
 
 policy, value = model(tensor_state)
 value = value.item()
@@ -44,7 +44,6 @@ args = {
     'num_searches': 1000
 }
 
-model = ResNet(tictactoe, 4, 64)
 model.eval()
 
 mcts = MCTS(tictactoe, args, model)

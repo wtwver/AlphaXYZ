@@ -98,7 +98,9 @@ class MCTS:
                 policy = torch.softmax(policy, axis=1).squeeze(0).cpu().numpy()
                 valid_moves = self.game.get_valid_moves(node.state)
                 policy *= valid_moves
+                print(policy)
                 policy /= np.sum(policy)
+                print(policy)
                 
                 value = value.item()
                 
