@@ -1,0 +1,3 @@
+An Introduction of mini-AlphaStar
+
+Large Language Models Play StarCraft II: Benchmarks and A Chain of Summarization Approach
